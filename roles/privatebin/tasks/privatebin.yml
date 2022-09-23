@@ -1,0 +1,14 @@
+- name: Import PrivateBin Helm repository
+  kubernetes.core.helm_repository:
+    name: "{{ privatebin_helm_repo_name }}"
+    repo_url: "{{ privatebin_helm_repo_url }}"
+
+- name: Deploy PrivateBin with Helm
+  kubernetes.core.k8s:
+    state: present
+    definition: "{{ item }}"
+  with_items: >-
+    {{ 
+      lookup('template', 'k8s-template-privatebin.yml') |
+      from_yaml_all 
+    }}

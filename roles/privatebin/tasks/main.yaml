@@ -1,0 +1,11 @@
+- include_vars: "privatebin-vars.yml"
+  tags: always
+
+- name: Deploy PrivateBin
+  include_tasks:
+    file: privatebin.yml
+    apply:
+      tags:
+        - privatebin
+  tags:
+    - privatebin

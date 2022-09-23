@@ -1,0 +1,8 @@
+all:
+  hosts:
+    isas-fsd-test@TKGI:
+      ansible_host: localhost
+      ansible_connection: local
+      ansible_python_interpreter: "{{ ansible_playbook_python }}"
+      tkgi_clustername: svc0176idevfsdkt0001
+      tkgi_apiserver: tkgi.epfl.ch

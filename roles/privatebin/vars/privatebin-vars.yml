@@ -1,0 +1,10 @@
+privatebin_helm_repo_name: privatebin
+privatebin_helm_repo_url: https://privatebin.github.io/helm-chart/
+privatebin_namespace: privatebin
+privatebin_storage_class_name: stcl-svc0176idevfsdkt0001
+
+privatebin_common_security_context:
+  runAsNonRoot: true
+  # runAsUser: 196
+  # runAsGroup: 196
+  # fsGroup: 196
