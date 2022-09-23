@@ -1,8 +1,3 @@
-- name: Import PrivateBin Helm repository
-  kubernetes.core.helm_repository:
-    name: "{{ privatebin_helm_repo_name }}"
-    repo_url: "{{ privatebin_helm_repo_url }}"
-
 - name: Deploy PrivateBin from an Ansible template
   kubernetes.core.k8s:
     state: present
