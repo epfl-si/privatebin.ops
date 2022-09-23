@@ -25,6 +25,9 @@ metadata:
     app.kubernetes.io/name: privatebin
     helm.sh/chart: privatebin-0.16.0
 data:
+  nginx-site.conf: |
+    {{ lookup("template", "nginx-site.conf") |
+    indent(4) }}
 ---
 # Source: privatebin/templates/service.yaml
 apiVersion: v1
@@ -102,6 +105,9 @@ spec:
           volumeMounts:
             - name: configs
               mountPath: /srv/cfg
+            - name: configs
+              mountPath: /etc/nginx/http.d/site.conf
+              subPath: nginx-site.conf
             - name: run
               mountPath: /run
             - name: tmp
