@@ -3,7 +3,7 @@
     name: "{{ privatebin_helm_repo_name }}"
     repo_url: "{{ privatebin_helm_repo_url }}"
 
-- name: Deploy PrivateBin with Helm
+- name: Deploy PrivateBin from an Ansible template
   kubernetes.core.k8s:
     state: present
     definition: "{{ item }}"
